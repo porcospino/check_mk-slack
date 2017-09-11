@@ -36,12 +36,8 @@ slack_domain = "https://hooks.slack.com"
 headers = {"Content-type": "application/json", "Accept": "text/plain"}
 message = "*" + os.environ['NOTIFY_NOTIFICATIONTYPE'] + "* "
 plaintext = message
-message += "\n" + os.environ['NOTIFY_HOSTNAME'] + " "
-plaintext += os.environ['NOTIFY_HOSTNAME'] + " "
-
-if os.environ['NOTIFY_HOSTALIAS']:
-    message   += "(" + os.environ['NOTIFY_HOSTALIAS'] + ")" + " "
-    plaintext += "(" + os.environ['NOTIFY_HOSTALIAS'] + ")" + " "
+message += "\n" + os.environ['NOTIFY_HOSTALIAS'] + " "
+plaintext += os.environ['NOTIFY_HOSTALIAS'] + " "
 
 # here lies service actions
 if os.environ['NOTIFY_WHAT'] == 'SERVICE':
